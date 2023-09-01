@@ -1,0 +1,119 @@
+/* Import your Font here */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 17px;
+    font-family:cursive;
+    color: rgb(20, 20, 100);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        310deg,
+        rgba(250, 246, 3, 1) 45%,
+        rgb(255, 115, 0) 65%
+    );
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    /* width: 20rem; */
+    height: 30rem;
+    max-width: 20rem;
+    background: rgb(217, 217, 218);
+    border-radius: 10px;
+    display: grid;
+    gap: 1px;
+    grid-template-areas:
+    "appName appName appName appName"
+    "display display display display"
+    "clearEntry clear delete divide";
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
+}
+
+.appName {
+    grid-area: appName;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.appName h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight:normal;
+}    
+
+.display {
+    grid-area: display;
+    padding: 2px 6px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.previousValue {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.currentValue {
+    font-size: 3.2rem;
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-family:monospace;
+}
+
+button {
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: rgb(227, 227, 235);
+    border: none;
+    outline: none;
+}
+
+button:hover, button:active {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.function {
+    background-color: rgb(204, 202, 202);
+}
+
+.signChange {
+    border-radius: 0 0 0 10px;
+}
+
+.equals {
+    background-color: rgb(56, 165, 255);
+    border-radius: 0 0 10px 0;
+}
+
+.equals:hover, .equals:active {
+    background-color: rgb(18, 128, 218)
+}
+
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 22px;
+    }
+    .container {
+        grid-template-rows: 35px minmax(95px, auto) repeat(5, minmax(0, 95px));
+    }
+    
+}
